@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    image: httpd:2.4
+    container_name: awaris-staging-web
+    restart: always
+    ports:
+      - "8013:80"
+    volumes:
+      - /d/Dockers/awaris-staging/awaris-web/dist:/usr/local/apache2/htdocs
+
+networks:
+    default:
+        external:
+          name: nginx_proxy_manager_default

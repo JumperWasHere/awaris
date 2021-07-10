@@ -1,0 +1,5 @@
+output/*
+translations/*
+.idea
+venv/*
+~$*

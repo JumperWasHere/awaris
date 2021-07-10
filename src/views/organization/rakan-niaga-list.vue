@@ -1,0 +1,181 @@
+<script>
+import { ArrowUpIcon, SettingsIcon } from "vue-feather-icons";
+import { Carousel, Slide } from "vue-carousel";
+
+import Navbar from "@/components/navbar";
+import Switcher from "@/components/switcher";
+import Footer from "@/components/footer";
+
+export default {
+  data() {
+    return {};
+  },
+  components: {
+    Navbar,
+    Switcher,
+    Footer,
+    ArrowUpIcon,
+    SettingsIcon,
+  },
+  computed: {
+    error() {
+      return this.$route.query.error;
+    },
+  },
+};
+</script>
+
+<template>
+  <div>
+    <Navbar :nav-light="true" />
+    <section class="bg-half bg-primary d-table w-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+            <div class="page-next-level">
+              <h4 class="title text-white">Rakan Niaga</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2 mt-4 pt-2">
+            <div class="alert alert-warning" v-if="error == 1">
+              Senarai Rakan Niaga
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 offset-md-3 mt-4 pt-2">
+            <router-link
+              :to="{ name: 'organization.list', params: { type: 'Individu' } }"
+              ><div class="card rounded shadow bg-dark border-0">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h4 class="text-white">Individu</h4>
+                      <div class="mt-4">
+                        <p class="h6 text-muted mb-0">
+                          Informasi Jenis Rakan Niaga
+                        </p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                      <img src="/images/icon/next.png" height="30" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </router-link>
+          </div>
+          <div class="col-md-6 offset-md-3 mt-4 pt-2">
+            <router-link
+              :to="{ name: 'organization.list', params: { type: 'Bank' } }"
+            >
+              <div class="card rounded shadow bg-dark border-0">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h4 class="text-white">Bank</h4>
+                      <div class="mt-4">
+                        <p class="h6 text-muted mb-0">
+                          Informasi Jenis Rakan Niaga
+                        </p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                      <img src="/images/icon/next.png" height="30" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </router-link>
+          </div>
+          <div class="col-md-6 offset-md-3 mt-4 pt-2">
+            <router-link
+              :to="{ name: 'organization.list', params: { type: 'Koperasi' } }"
+              ><div class="card rounded shadow bg-dark border-0">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h4 class="text-white">Koperasi</h4>
+                      <div class="mt-4">
+                        <p class="h6 text-muted mb-0">
+                          Informasi Jenis Rakan Niaga
+                        </p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                      <img src="/images/icon/next.png" height="30" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </router-link>
+          </div>
+          <div class="col-md-6 offset-md-3 mt-4 pt-2">
+            <router-link
+              :to="{ name: 'organization.list', params: { type: 'Swasta' } }"
+              ><div class="card rounded shadow bg-dark border-0">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h4 class="text-white">Organisasi Swasta</h4>
+                      <div class="mt-4">
+                        <p class="h6 text-muted mb-0">
+                          Informasi Jenis Rakan Niaga
+                        </p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                      <img src="/images/icon/next.png" height="30" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </router-link>
+          </div>
+          <div class="col-md-6 offset-md-3 mt-4 pt-2">
+            <router-link
+              :to="{ name: 'organization.list', params: { type: 'Kerajaan' } }"
+              ><div class="card rounded shadow bg-dark border-0">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <h4 class="text-white">Syarikat Berkaitan Kerajaan</h4>
+                      <div class="mt-4">
+                        <p class="h6 text-muted mb-0">
+                          Informasi Jenis Rakan Niaga
+                        </p>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                      <img src="/images/icon/next.png" height="30" alt="" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+    <!-- <Switcher /> -->
+
+    <a
+      href="javascript: void(0);"
+      class="btn btn-icon btn-soft-primary back-to-top"
+      id="back-to-top"
+      v-scroll-to="'#topnav'"
+    >
+      <arrow-up-icon class="icons"></arrow-up-icon>
+    </a>
+  </div>
+</template>
